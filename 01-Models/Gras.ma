@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: Gras.ma
-//Last modified: Sun, Nov 08, 2015 02:12:57 PM
+//Last modified: Sun, Nov 08, 2015 11:00:29 PM
 //Codeset: UTF-8
 requires maya "2015";
 currentUnit -l centimeter -a degree -t film;
@@ -13,7 +13,7 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
 	setAttr ".t" -type "double3" 13.846027021624367 7.1163854106544413 -2.098488907825474 ;
-	setAttr ".r" -type "double3" -16.200000000008586 -79.199999999994944 -1.69737024659787e-14 ;
+	setAttr ".r" -type "double3" -16.20000000000859 -79.199999999994944 -1.69737024659787e-14 ;
 	setAttr ".rp" -type "double3" 0 -8.8817841970012523e-16 0 ;
 	setAttr ".rpt" -type "double3" -4.1719789629163148e-17 -9.5695800633810249e-20 2.8637307498390551e-17 ;
 createNode camera -s -n "perspShape" -p "persp";

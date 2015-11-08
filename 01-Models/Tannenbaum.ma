@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: Tannenbaum.ma
-//Last modified: Sun, Nov 08, 2015 01:53:16 PM
+//Last modified: Sun, Nov 08, 2015 11:07:18 PM
 //Codeset: UTF-8
 requires maya "2015";
 currentUnit -l centimeter -a degree -t film;
@@ -995,8 +995,6 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".laa" yes;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "groupId3.id" "pPlaneShape2.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pPlaneShape2.iog.og[0].gco";
 connectAttr "groupParts2.og" "pPlaneShape2.i";

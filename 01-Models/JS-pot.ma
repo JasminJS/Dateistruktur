@@ -1,9 +1,8 @@
 //Maya ASCII 2015 scene
 //Name: JS-pot.ma
-//Last modified: Sun, Nov 08, 2015 12:56:20 PM
+//Last modified: Sun, Nov 08, 2015 11:01:34 PM
 //Codeset: UTF-8
 requires maya "2015";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2015";
@@ -82,7 +81,7 @@ createNode mesh -n "pCylinderShape1" -p "pCylinder1";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".sdt" 0;
 	setAttr ".ugsdt" no;
-	setAttr -s 16 ".pt";
+	setAttr -s 12 ".pt";
 	setAttr ".pt[7]" -type "float3" 0 -2.9802322e-08 0 ;
 	setAttr ".pt[11]" -type "float3" 1.4901161e-08 0 -1.4901161e-08 ;
 	setAttr ".pt[12]" -type "float3" 0 -2.9802322e-08 0 ;
@@ -465,6 +464,8 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "polyTriangulate1.out" "pCylinderShape1.i";
 connectAttr "groupId1.id" "pCylinderShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pCylinderShape1.iog.og[0].gco";
@@ -585,6 +586,6 @@ connectAttr "pCylinderShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
 dataStructure -fmt "raw" -as "name=externalContentTable:string=node:string=key:string=upath:uint32=upathcrc:string=rpath:string=roles";
-applyMetadata -fmt "raw" -v "channel\nname externalContentTable\nstream\nname v1.0\nindexType numeric\nstructure externalContentTable\n0\n\"file1\" \"fileTextureName\" \"/Users/Jasmin/Desktop/wood_8_by_deltastock.jpg\" 3212431811 \"/Users/Jasmin/Desktop/wood_8_by_deltastock.jpg\" \"sourceImages\"\nendStream\nendChannel\nendAssociations\n" 
+applyMetadata -fmt "raw" -v "channel\nname externalContentTable\nstream\nname v1.0\nindexType numeric\nstructure externalContentTable\n0\n\"file1\" \"fileTextureName\" \"/Users/Jasmin/Desktop/wood_8_by_deltastock.jpg\" 3212431811 \"\" \"sourceImages\"\nendStream\nendChannel\nendAssociations\n" 
 		-scn;
 // End of JS-pot.ma
